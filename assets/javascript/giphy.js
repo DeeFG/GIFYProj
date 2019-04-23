@@ -1,58 +1,79 @@
-var topics = ["Flowers","Patriots","Slay","Lemonade","Money","Laugh"];
-var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        topics + "&api_key=tWQYz0gCQxDLPiDqZLzGWA4Qpb5NkuSy&limit=10";
+var topics = ["Flowers","Patriots", "Slay", "Lemonade", "Money", "Laugh"];
+// var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+//     topics + "&api_key=tWQYz0gCQxDLPiDqZLzGWA4Qpb5NkuSy&limit=10";
 // var queryURL = "https://api.giphy.com//v1/gifs/search?q=" + topics[i] + "&api_key=tWQYz0gCQxDLPiDqZLzGWA4Qpb5NkuSy&limit=10" ;
 // var APIkey = "tWQYz0gCQxDLPiDqZLzGWA4Qpb5NkuSy" ;
 
 
- $("#buttonarea").empty();
-
-    for (var i = 0; i < topics.length; i++) {
-        var newtopicbtn = $("<button >" + topics[i] + "</button>")
-        newtopicbtn.addClass("gif");
-        newtopicbtn.attr("data-topic", topics[i]);
-        newtopicbtn.text(topics[i]);
-        $("#buttonarea").append(newtopicbtn);
-     displayGIFS();
-    } 
+var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+    topics  + "&api_key=tWQYz0gCQxDLPiDqZLzGWA4Qpb5NkuSy&limit=10";
 
 function displayGIFS() {
-    newtopicbtn = $(this).attr("data-topic");
+
+var topic = $(this).attr("data-topic")
+
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        $("#gifarea").html(JSON.stringify(response.data));
-
-//         $('#img').html('<img src="http://www.site.com/' + $(this).val() + '.jpg"
-// width = "200px" > ');
-//         $('#img').hide().fadeIn('slow');
-
-        console.log(response.data[type])
-        console.log(response.url)
-        console.log()
 
 
+        for (var i = 0; i < topics.length; i++) {
+
+            $("#buttonarea").append(newtopicbtn);
+            
+            
+                var newtopicbtn = $("<button >" + topics + "</button>")
+                newtopicbtn.addClass("gif");
+                newtopicbtn.attr("data-topic", topics[i]);
+                newtopicbtn.text(topics[i]);
+                $("#buttonarea").append(newtopicbtn);
+                
+
+                //  var ratingDiv = ("<div class='rating'>") ;
+                // var rating = response.data[0].rating ;
+                // var ratingDis= $("<p>").text("Rating:" + rating);
+                // ratingDiv.appendTo(ratingDis);
+
+
+                var imgURL = response.data[i].images.fixed_width_small.url;
+                var image = $("<img>").attr("src", imgURL);
+                $("#gifarea").append(image);
+                }
+        console.log(response.data[0].rating)
+        console.log(response.data[0].images.downsized.url)
+
+ 
+        $("#gifarea").html
+        console.log(JSON.stringify(response));
 
     });
+
 }
 
 
-$("#button-addon2").on("click", function(event){
+$("#button-addon2").on("click", function (event) {
     //event.preventDefualt();
 
     var topic = $("#form-control").val().trim();
+
     topics.push(topic);
-    console.log(movies);
+    console.log(topic);
 
     getBtn();
 
 });
 
 
+$( document ).ready(function() {
+    console.log( "ready!" );
+    $("#buttonarea").empty();
+    displayGIFS();
 
 
+
+});
 
 
 

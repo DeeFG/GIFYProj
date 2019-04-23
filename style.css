@@ -9,6 +9,8 @@ body{
 
 .container-fluid{
     background:rgb(216, 211, 211);
+    margin: auto;
+    border: 5px solid green;
 }
 button{
     background: rgb(204, 156, 137);
@@ -37,14 +39,14 @@ button{
 }
 
 #gifarea{
-    border: 1px  rgb(204, 156, 137) solid;
+    border: 1px  rgb(201, 178, 168) solid  ;
     text-align: center;
     padding: 10px 50px;
     border-radius: 1px;
     margin:5px;
 }
 .fixed-bottom{
-    background: rgb(204, 156, 137);
+    background: rgb(201, 178, 168);
     color: white;
     text-align: center; 
 }

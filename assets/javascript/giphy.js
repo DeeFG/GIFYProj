@@ -14,7 +14,7 @@ var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         newtopicbtn.text(topics[i]);
         $("#buttonarea").append(newtopicbtn);
      displayGIFS();
-    }
+    } 
 
 function displayGIFS() {
     newtopicbtn = $(this).attr("data-topic");

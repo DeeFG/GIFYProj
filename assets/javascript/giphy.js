@@ -12,7 +12,7 @@ for (var i = 0; i < topics.length; i++) {
         method: "GET"
     }).then(function (response) {
 
-        var imgURL = response.data[i].images.fixed_width_small.url;
+        var imgURL = response.data[i].images.fixed_width.url;
         var image = $("<img>").attr("src", imgURL);
         $("#gifarea").append(image);
 

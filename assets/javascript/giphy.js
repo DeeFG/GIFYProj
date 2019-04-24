@@ -12,6 +12,11 @@ for (var i = 0; i < topics.length; i++) {
         method: "GET"
     }).then(function (response) {
 
+        var imgURL = response.data[i].images.fixed_width_small.url;
+        var image = $("<img>").attr("src", imgURL);
+        $("#gifarea").append(image);
+
+
         console.log(response)
 
     });
@@ -41,20 +46,25 @@ $("#addInput").on("click", function (event) {
     $("#userInput").val("");
 });
 
- 
-$(this).on("click", function(){
- console.log("clicked")
+// $.ajax({
+//     url: queryURL,
+//     method: "GET"
+// }).then(function (response) {
 
+//     $("#buttonarea").on("click", function () {
+//         console.log("clicked")
 
+//         var clickedbtn = $(this).attr("data-topic")
 
-        // call ajx for specific topic when button pressed
+//         // call ajx for specific topic when button pressed
 
+//         var imgURL = response.data[i].images.fixed_width_small.url;
+//         var image = $("<img>").attr("src", imgURL);
+//         $("#gifarea").append(image);
 
+//     });
 
-//});
-
-
-
+// }
 
 // function displayGIFS() {
 
@@ -67,11 +77,6 @@ $(this).on("click", function(){
 //     }).then(function (response) {
 
 
-
-
-//             $("#buttonarea").append(newtopicbtn);
-
-//     ]
 
 //                 //  var ratingDiv = ("<div class='rating'>") ;
 //                 // var rating = response.data[0].rating ;

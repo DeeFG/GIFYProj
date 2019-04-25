@@ -1,4 +1,4 @@
-var topics = ["Flowers", "Patriots", "Slay", "Lemonade", "Money", "Laugh"];
+var topics = ["unicorns", "firework", "dance", "bling"];
 var APIkey = "tWQYz0gCQxDLPiDqZLzGWA4Qpb5NkuSy";
 
 
@@ -11,13 +11,17 @@ for (var i = 0; i < topics.length; i++) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-
+        // display image
         var imgURL = response.data[i].images.fixed_width.url;
         var image = $("<img>").attr("src", imgURL);
         $("#gifarea").append(image);
+        /// display rating
+        var rating = response.data[i].rating;
+        var ratingDiv = $("<div>").attr("id", rating);
+        ratingDiv.text(rating);
+        $("#gifarea").append("Rated:" + rating)
 
-
-        console.log(response)
+        console.log(response);
 
     });
 
@@ -46,25 +50,76 @@ $("#addInput").on("click", function (event) {
     $("#userInput").val("");
 });
 
+
+// click to search attr of created button
+
+$("#buttonarea").on("click", function (response) { 
+   
+    var clickedbtn = $(this).attr("data-topic");
+    /// clear current gifs
+    event.preventDefault();
+    $("#gifarea").append();
+    $("#gifarea").append();
+
+     console.log("clicked")
+
+// run val for" this ""
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+            clickedbtn + "&api_key=tWQYz0gCQxDLPiDqZLzGWA4Qpb5NkuSy&limit=10";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            // display image
+            var imgURL = response.data[i].images.fixed_width.url;
+            var image = $("<img>").attr("src", imgURL);
+            $("#gifarea").append(image);
+            /// display rating
+            var rating = response.data[i].rating;
+            var ratingDiv = $("<div>").attr("id", rating);
+            ratingDiv.text(rating);
+            $("#gifarea").append("Rated:" + rating)
+
+            console.log(response);
+        });
+
+   // }
+});
+
+
+
 // $.ajax({
 //     url: queryURL,
 //     method: "GET"
 // }).then(function (response) {
 
-//     $("#buttonarea").on("click", function () {
-//         console.log("clicked")
 
-//         var clickedbtn = $(this).attr("data-topic")
+    // $("#buttonarea").on("click", function (response) {
+    //     console.log("clicked")
+    //     var clickedbtn = $(this).attr("data-topic");
+    //     // var filter = topics.filter(topics === clickedbtn );
+    //     console.log(clickedbtn)
 
-//         // call ajx for specific topic when button pressed
 
-//         var imgURL = response.data[i].images.fixed_width_small.url;
-//         var image = $("<img>").attr("src", imgURL);
-//         $("#gifarea").append(image);
+    //     //running api with attr value
+    //     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+    //         topics[i] + "&api_key=tWQYz0gCQxDLPiDqZLzGWA4Qpb5NkuSy&limit=10";
+    //     // call ajax for specific topic when button pressed
+    //     $.ajax({
+    //         url: queryURL,
+    //         method: "GET"
+    //     }).then(function (response) {
 
+            // pull 10 images
+            //put mage on screen
+            // var imgURL = response.data[i].images.fixed_width.url;
+            // var image = $("<img>").attr("src", imgURL);
+            // $("#gifarea").append(image);
+
+//         });
 //     });
-
-// }
+// });
 
 // function displayGIFS() {
 
@@ -75,22 +130,6 @@ $("#addInput").on("click", function (event) {
 //         url: queryURL,
 //         method: "GET"
 //     }).then(function (response) {
-
-
-
-//                 //  var ratingDiv = ("<div class='rating'>") ;
-//                 // var rating = response.data[0].rating ;
-//                 // var ratingDis= $("<p>").text("Rating:" + rating);
-//                 // ratingDiv.appendTo(ratingDis);
-
-
-//                 var imgURL = response.data[i].images.fixed_width_small.url;
-//                 var image = $("<img>").attr("src", imgURL);
-//                 $("#gifarea").append(image);
-
-
-//         console.log(response.data[0].rating)
-//         console.log(response.data[0].images.downsized.url)
 
 
 //         $("#gifarea").html
@@ -112,17 +151,6 @@ $("#addInput").on("click", function (event) {
 //     getBtn();
 
 // });
-
-
-// $( document ).ready(function() {
-//     console.log( "ready!" );
-//     $("#buttonarea").empty();
-//     displayGIFS();
-
-
-
-// });
-
 
 
 

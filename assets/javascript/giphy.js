@@ -31,16 +31,16 @@ $("#addInput").on("click", function (event) {
 
 
 
-    
- if (event.keyCode >= 65 && event.keyCode <= 90 ) { /// code to use letters only 
-    alert('Ummmmmm you have to type something');
-    return false;
- }
-    if(topic === ""){
+
+    if (event.keyCode >= 65 && event.keyCode <= 90) { /// code to use letters only 
         alert('Ummmmmm you have to type something');
         return false;
     }
-   
+    if (topic === "") {
+        alert('Ummmmmm you have to type something');
+        return false;
+    }
+
 
 
 
@@ -48,7 +48,7 @@ $("#addInput").on("click", function (event) {
 
 // click to search attr of created button
 
-$("#buttonarea").on("click", ".searchGif", function () { 
+$("#buttonarea").on("click", ".searchGif", function () {
 
     var clickedbtn = $(this).attr("data-topic")/// clear current gifs ????
     console.log(clickedbtn)
@@ -63,12 +63,12 @@ $("#buttonarea").on("click", ".searchGif", function () {
     }).then(function (response) {
 
         console.log(response)
-        for(var i = 0; i < response.data.length; i++){
+        for (var i = 0; i < response.data.length; i++) {
 
-if(response.data[i].images.downsized.height > 400){
-    ///  add if images bigger heigh > 300 disreGARD ????
-    console.log(" too big");
-}
+            if (response.data[i].images.downsized.height > 400) {
+                ///  add if images bigger heigh > 300 disreGARD ????
+                console.log(" too big");
+            }
 
             var imgURL = response.data[i].images.fixed_width_still.url;
             var image = $("<img>").attr("src", imgURL);
@@ -79,22 +79,22 @@ if(response.data[i].images.downsized.height > 400){
 
             /// display rating
             var rating = response.data[i].rating;
-            var ratingDiv = $("<p>").attr("id", rating);
+            var ratingDiv = $("<div>").attr("id", rating);
             ratingDiv.addClass("rateingClass");
             ratingDiv.html(rating);
-          $("#gifarea").append(ratingDiv);
+            $("#gifarea").append(ratingDiv);
 
         }
     })
 });
 
-$("#gifarea").on("click", ".gif", function(){
+$("#gifarea").on("click", ".gif", function () {
     console.log(this)
     var animUrl = $(this).attr("data-anim")
     var stillUrl = $(this).attr("data-still")
     var showsImg = $(this).attr("src")
 
-    if (animUrl === showsImg){
+    if (animUrl === showsImg) {
         console.log("Image is animated, make still")
         $(this).attr("src", stillUrl)
     } else {
@@ -102,5 +102,4 @@ $("#gifarea").on("click", ".gif", function(){
         $(this).attr("src", animUrl)
     }
 })
-// when hovered display background image 
-
+// when hovered display background image

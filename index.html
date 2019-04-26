@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- /bootstrap --> 
+    <!-- /bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- css -->
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-<div class="container-fluid">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12"> <br> </div>
         </div>
@@ -32,21 +32,20 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="userInput" placeholder="Search a topic" >
+                    <input type="text" class="form-control" id="userInput" placeholder="Search a topic">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="submit" id="addInput">GET GIFY</button>
                     </div>
                 </div>
             </div>
-        </div>        
-         <div class="row">
+        </div>
+        <div class="row gifbox">
             <div class="col-md-12" id="buttonarea">
-                <button>Sample Button</button>
+                <!-- <button class="gif">Sample Button</button> -->
             </div>
         </div>
-        <div class="row" id="gifarea">
-            <div class="col-md-12">
-            </div>
+        <div class="row">
+            <div class="col-md-12" id="gifarea"> </div>
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -55,8 +54,13 @@
                 </footer>
             </div>
         </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="assets/javascript/giphy.js"></script>
+    </div>
+    <!-- <div class="container">
+        <img src="https://via.placeholder.com/150" alt="Snow" style="width:100%;">
+        <div class="centered">Centered</div>
+    </div> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/giphy.js"></script>
 </body>
+
 </html>

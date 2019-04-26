@@ -1,4 +1,4 @@
-var topics = ["unicorns", "firework", "dance", "bling"];
+var topics = ["diamonds", "rubies", "dance", "bling"];
 var APIkey = "tWQYz0gCQxDLPiDqZLzGWA4Qpb5NkuSy";
 
 
@@ -11,13 +11,20 @@ for (var i = 0; i < topics.length; i++) {
     $("#buttonarea").append(newtopicbtn);
 
 }
+
 //  submit button used to add buttons 
 $("#addInput").on("click", function (event) {
     event.preventDefault();
 
+    var topic = $("#userInput").val().trim();
+
+
+    if (topic === "") {
+        alert('You can only get GiFY with a topic');
+        return false;
+    }
 
     //take input  and turn it into a button
-    var topic = $("#userInput").val();
     //adds input to array
     topics.push(topic);
     // adds button of input to page
@@ -28,20 +35,6 @@ $("#addInput").on("click", function (event) {
     $("#buttonarea").append(topicsAdded);
     // clears out search box
     $("#userInput").val("").trim();
-
-
-
-
-    if (event.keyCode >= 65 && event.keyCode <= 90) { /// code to use letters only 
-        alert('Ummmmmm you have to type something');
-        return false;
-    }
-    if (topic === "") {
-        alert('Ummmmmm you have to type something');
-        return false;
-    }
-
-
 
 
 });
@@ -102,4 +95,4 @@ $("#gifarea").on("click", ".gif", function () {
         $(this).attr("src", animUrl)
     }
 })
-// when hovered display background image
+

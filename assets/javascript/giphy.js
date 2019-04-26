@@ -27,7 +27,7 @@ $("#addInput").on("click", function (event) {
     topicsAdded.text(topic);
     $("#buttonarea").append(topicsAdded);
     // clears out search box
-    $("#userInput").val("");
+    $("#userInput").val("").trim();
 
   
 

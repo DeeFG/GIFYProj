@@ -29,7 +29,6 @@ $("#addInput").on("click", function (event) {
     // clears out search box
     $("#userInput").val("").trim();
 
-  
 
 
     

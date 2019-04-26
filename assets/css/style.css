@@ -1,18 +1,25 @@
 html{
-    background:rgb(216, 211, 211)
+    background:#211522
+    color: #211522;
 }
 body{
-    background:rgb(216, 211, 211);
+    background:#211522;
 
 }
+.jumbotron {
+    background: #D3B1C2;
+    color: #211522;
 
+}
 .container-fluid{
-    background:rgb(216, 211, 211);
+    background:#211522;
 
 }
-
+p{
+ display: inline-block;
+}
 button{
-    background: rgb(204, 156, 137);
+    background:#D3B1C2;
     border-radius: 6px;
 }
 #headtext{
@@ -23,26 +30,40 @@ button{
 }
 .input-group.mb-3{
     width: 0 auto;
-    margin-left: 200 px;
+    
+}
+#addInput{
+    background: #D3B1C2;
+    color: #211522;
 }
 button.searchGif{
     margin: 3px;
     border: 2px solid white;
+    text-transform: uppercase;
+
 }
 #buttonarea{
     padding:20px 50px;
     text-align: center;
+
 }
 
 #gifarea{
     text-align: center;
-    border: 1px  rgb(201, 178, 168) solid  ;
+    border: 3px  #613659 solid  ;
     padding: 10px 50px;
     border-radius: 1px;
     margin:20px 20px 40px 20px ;
+    display: inline-block;
+    background:#211522;
+    color: #D3B1C2;
+    text-transform: uppercase;
+}
+.gifbox{
+   
 }
 .fixed-bottom{
-    background: rgb(201, 178, 168);
+    background:#D3B1C2;
     color: white;
     text-align: center; 
 }

@@ -80,7 +80,7 @@ if(response.data[i].images.downsized.height > 400){
 
             /// display rating
             var rating = response.data[i].rating;
-            var ratingDiv = $("<div>").attr("id", rating);
+            var ratingDiv = $("<p>").attr("id", rating);
             ratingDiv.addClass("rateingClass");
             ratingDiv.html(rating);
           $("#gifarea").append(ratingDiv);

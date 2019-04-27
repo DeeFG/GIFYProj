@@ -1,27 +1,18 @@
 html{
-    background:#211522
-    color: #211522;
+    color: #6c5b7b;
 }
 body{
-    background:#211522;
+    background: #355c7d; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #355c7d, #6c5b7b, #c06c84); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #355c7d, #6c5b7b, #c06c84); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 .jumbotron {
-    background: #D3B1C2;
-    color: #211522;
-
-}
-.container-fluid{
-    background:#211522;
-
+    background:#F5D5E4;
+    color: #6c5b7b;
 }
 
-button{
-    background:#D3B1C2;
-    border-radius: 40px;
-    padding-left:5px;
-    padding-right:5px;
-}
+    
 #headtext{
     text-align: right;
 }
@@ -37,53 +28,45 @@ button{
     border-radius: 40px;
     width: 25%;
 }
-
+/*  search button */
 #addInput{
-
-    color: #211522;
-    background:#D3B1C2;
-    border-radius: 40px;
-
-
+    background:#F5D5E4;
+    color: #6c5b7b;
 }
-button.searchGif{
-    margin: 3px;
-    border: 2px solid white;
-    text-transform: uppercase;
 
-}
 #buttonarea{
     padding:20px 50px;
     text-align: center;
-
+}
+button.searchGif{
+    color: #6c5b7b;;
+    margin: 3px;
+    border: 2px solid rgb(219, 209, 214);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    background:#F5D5E4;
+    border-radius: 10px;
+    padding-left:5px;
+    padding-right:5px;
 }
 
 #gifarea{
+
+    margin-top: 10px;
     text-align: center;
-    border: 3px  #613659 solid  ;
-    padding: 10px 50px;
-    border-radius: 1px;
-    margin:20px 20px 40px 20px ;
     display: inline-block;
-    background:#211522;
-    color: #D3B1C2;
+    color:#F5D5E4;
     text-transform: uppercase;
 }
-.gifbox{
-   
-}
-.fixed-bottom{
-    background:#D3B1C2;
-    color: white;
-    text-align: center; 
-}
-
-img{
-    margin 30px;
-    border: 3px  #613659 solid  ;
 
 
+img.gif{
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+
 }
+
 
 .rateingClass{
     font-weight: bolder;
@@ -98,13 +81,11 @@ img{
     display: inline-flex;
   }
 
- /* https://www.canva.com/colors/color-palettes/pasture-of-dreams/
 
- Mauve
-#D3B1C2
-Lavender
-#C197D2
-Black
-#211522
-Orchid
-#613659 */
+.fixed-bottom{
+    background:#F5D5E4;
+    color: #6c5b7b;;
+    text-align: center; 
+    font-size: 12px;
+    margin-top
+}

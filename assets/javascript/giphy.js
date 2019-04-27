@@ -1,4 +1,4 @@
-var topics = ["diamonds", "rubies", "dance", "bling"];
+var topics = ["Dance", "Unicorns", "Cotton Candy"];
 var APIkey = "tWQYz0gCQxDLPiDqZLzGWA4Qpb5NkuSy";
 
 
@@ -36,7 +36,6 @@ $("#addInput").on("click", function (event) {
     // clears out search box
     $("#userInput").val("").trim();
 
-
 });
 
 // click to search attr of created button
@@ -60,6 +59,8 @@ $("#buttonarea").on("click", ".searchGif", function () {
 
             if (response.data[i].images.downsized.height > 400) {
                 ///  add if images bigger heigh > 300 disreGARD ????
+                // return newresult;
+
                 console.log(" too big");
             }
 
@@ -77,9 +78,13 @@ $("#buttonarea").on("click", ".searchGif", function () {
             ratingDiv.html(rating);
             $("#gifarea").append(ratingDiv);
 
+
+
         }
     })
 });
+
+
 
 $("#gifarea").on("click", ".gif", function () {
     console.log(this)

@@ -6,6 +6,7 @@
 
 ## How it works :question:
 ### Type in a topic and a button will be dynamically created. Click your topic and the GIFs will populate !!
+#### Hover over this gif to seee its rating
 
 
 

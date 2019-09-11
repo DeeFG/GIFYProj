@@ -1,12 +1,13 @@
 
 
 # GIPHY API 
-### Se3arch your favorite GiFs
+### Search your favorite GIFs
+## [ :arrow_forward:Get Gify with it!](https://deefg.github.io/GIFYProj/)
 
 ## How it works :question:
-### Type in a topic and the GIFs will populate and button of your topic will be dynamically created
+### Type in a topic and a button will be dynamically created. Click your topic and the GIFs will populate !!
 
-## [ :arrow_forward:Get Gify with it!](https://deefg.github.io/GIFYProj/)
+
 
 ## Technology Used: :computer:
 * HTML
